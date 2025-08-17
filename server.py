@@ -23,7 +23,6 @@ def emot_analyzer():
         for emotion,score in response.items()
         if emotion != 'dominant_emotion'
     ])
-    
     result_text=(f"For the given statement, the system response is {emotion_scores}. "
     f"The dominant emotion is {dominant_emotion}.")
     return result_text
