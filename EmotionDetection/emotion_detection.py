@@ -7,7 +7,6 @@ def emotion_detector(text_to_analyze):
     response=requests.post(url,headers=headers,json=myobj)
     formatted_response=json.loads(response.text)
     emotions=formatted_response['emotionPredictions'][0]['emotion']
-    print("Overall emotion scores")
     for emotion,score in emotions.items():
         dominant_emotion=max(emotions, key=emotions.get)
         return {"anger":score,"disgust":score,"fear":score,
