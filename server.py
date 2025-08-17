@@ -16,6 +16,8 @@ def emot_analyzer():
     text_to_analyze=request.args.get('textToAnalyze')
     response=emotion_detector(text_to_analyze)
     dominant_emotion=response['dominant_emotion']
+    if dominant_emotion  is None:
+        return "Invalid text! please try again!"
     emotion_scores=", ".join([
         f"'{emotion}: {score}'"
         for emotion,score in response.items()
